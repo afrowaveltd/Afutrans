@@ -1,3 +1,5 @@
 <Solution>
   <Project Path="Translator/Translator.csproj" />
+  <Project Path="TUI.Translator/Tests/TUI.Translator.Tests.csproj" Id="f2b2ed9c-3b0d-4e37-aac9-19f21d96b495" />
+  <Project Path="TUI.Translator/TUI.Translator.csproj" Id="41ca4d47-3d66-42d5-9dcc-5c788c27c38f" />
 </Solution>
