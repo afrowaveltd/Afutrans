@@ -1,97 +1,62 @@
 // -----------------------------------------------------------------------------
-//  A small but complete Terminal.Gui v2 app: menu bar + status bar + interactive
-//  content.  Run it:  dotnet run   (F9/menu or the status bar quits)
+//  Afutrans translator — Terminal.Gui v2 front end.
 //
-//  🤖 AI assistants / agents: READ ./AGENTS.md FIRST.
-//     Terminal.Gui v2 is a COMPLETE REWRITE. Pre-2025 training data and most web
-//     examples are v1 and will not compile. The canonical v2 patterns are in AGENTS.md.
+//  The interesting wiring lives in Afutrans.Core (a shared class library that the
+//  Avalonia GUI uses too):
+//    * view models + validation + localization  -> Afutrans.Core.ViewModels
+//    * navigation route table + service         -> Afutrans.Core.Navigation
+//    * practice service (IHelloService)         -> Afutrans.Core.Services
+//
+//  This project only renders: ShellWindow.cs keeps a static header and footer and
+//  swaps the content page; Views/Pages/*.cs bind to the shared view models.
+//
+//  Run:  dotnet run                 (English)
+//        dotnet run -- --culture cs (Czech, to see the localizer switch)
+//  Quit: Ctrl+Q / the File menu / the status bar.
+//
+//  🤖 AI assistants / agents: READ ./AGENTS.md FIRST — Terminal.Gui v2 is a
+//     complete rewrite and pre-2025 examples will not compile.
 // -----------------------------------------------------------------------------
 
+using Afutrans.Core.DependencyInjection;
+using Afutrans.Core.Localization;
+using Afutrans.Core.ViewModels;
+using Microsoft.Extensions.DependencyInjection;
 using Terminal.Gui.App;           // Application, IApplication, MessageBox
 using Terminal.Gui.Configuration; // ConfigurationManager
-using Terminal.Gui.Input;         // Key, Command
-using Terminal.Gui.ViewBase;      // View, Pos, Dim
-using Terminal.Gui.Views;         // Runnable, Label, Button, MenuBar, StatusBar, Shortcut
+using TUI.Translator.Navigation;
+using TUI.Translator.Views;
 
-#pragma warning disable CS0618 // Typ nebo člen je zastaralý.
+#pragma warning disable CS0618 // Type or member is obsolete.
 ConfigurationManager.Enable(ConfigLocations.All);
-#pragma warning restore CS0618 // Typ nebo člen je zastaralý.
+#pragma warning restore CS0618 // Type or member is obsolete.
 
-// Instance lifecycle — NOT static Init/Run/Shutdown:  Create() -> Run<T>() -> Dispose().
-Application
-    .Create()
-    .Run<MainWindow>()
-    .Dispose();
+// English is the default language; `--culture cs` shows the shared localizer at work.
+var culture = args
+    .Select((argument, index) => (argument, index))
+    .Where(item => item.argument == "--culture" && item.index + 1 < args.Length)
+    .Select(item => new System.Globalization.CultureInfo(args[item.index + 1]))
+    .FirstOrDefault();
 
-// `Runnable` is a full-screen, borderless root (use `Window` if you want a bordered box).
-// A typical app puts a MenuBar at the top, a StatusBar at the bottom, and content between.
-//
-// `public` so the optional test project can construct it (scaffold it with `--WithTests`).
-// Terminal.Gui views can be built and exercised headlessly — no terminal needed for logic tests.
-public sealed class MainWindow : Runnable
-{
-    private int _count;
-    private readonly Label _countLabel;
+// --- Dependency injection -----------------------------------------------------
+var services = new ServiceCollection();
 
-    public MainWindow()
-    {
-        Title = "My Terminal.Gui App";
+// Shared core: localizer, IHelloService, navigation service, shell view model.
+services.AddAfutransCore(culture);
 
-        // --- Menu bar -------------------------------------------------------
-        // Menus is a collection of MenuBarItem; each holds MenuItems with an Action.
-        MenuBar menu = new()
-        {
-            Menus =
-            [
-                new MenuBarItem ("_File", [new MenuItem ("_Quit", "", () => App?.RequestStop ())]),
-                new MenuBarItem ("_Help", [new MenuItem ("_About", "", ShowAbout)])
-            ]
-        };
+// The three pages of the shell; the route key doubles as the localization key of the title.
+services.AddAfutransPage<MainViewModel>(StringKeys.NavMain);
+services.AddAfutransPage<SetupViewModel>(StringKeys.NavSetup);
+services.AddAfutransPage<TestViewModel>(StringKeys.NavTest);
 
-        // --- Status bar (key hints) ----------------------------------------
-        StatusBar status = new();
-        status.Add(new Shortcut(Key.F1, "About", ShowAbout));
-        status.Add(new Shortcut(Application.GetDefaultKey(Command.Quit), "Quit", () => App?.RequestStop()));
+using var provider = services.BuildServiceProvider();
 
-        // --- Content (laid out between the menu and status bars) -----------
-        // Layout is DECLARATIVE — Pos/Dim, never hardcoded coordinates.
-        View content = new()
-        {
-            Y = Pos.Bottom(menu),
-            Width = Dim.Fill(),
-            Height = Dim.Fill(status)   // fill down to (but not over) the status bar
-        };
+// The shell is the only long lived view model; pages are created per navigation by the service.
+using var shell = provider.GetRequiredService<ShellViewModel>();
 
-        _countLabel = new()
-        {
-            Text = "Count: 0",
-            X = Pos.Center(),
-            Y = Pos.Center() - 1
-        };
+var pageViews = new PageViewFactory();
 
-        Button increment = new()
-        {
-            Text = "_Increment",
-            X = Pos.Center(),
-            Y = Pos.Center() + 1
-        };
-
-        // No `Clicked` in v2 — use `Accepted` for side effects (it fires when the view is
-        // activated: Enter/click/hotkey). Use `Accepting` only to inspect/cancel (e.Handled = true).
-        // `App!` is the running IApplication, reachable from any view in the tree.
-        increment.Accepted += (_, _) =>
-        {
-            _count++;
-            _countLabel.Text = $"Count: {_count}";   // update state -> UI
-        };
-
-        content.Add(_countLabel, increment);
-
-        // 👉 Add your views to `content`. See AGENTS.md for patterns + common pitfalls.
-
-        Add(menu, content, status);
-    }
-
-    private void ShowAbout() =>
-        MessageBox.Query(App!, "About", "Built with Terminal.Gui v2.\nEdit Program.cs to make it yours.", "OK");
-}
+// Instance lifecycle — NOT static Init/Run/Shutdown:  Create() -> Run(view) -> Dispose().
+using var app = Application.Create();
+using var window = new ShellWindow(shell, pageViews.Create);
+app.Run(window);
