@@ -1,0 +1,44 @@
+﻿using Avalonia.Controls;
+using System;
+using Translator.ViewModels;
+
+namespace Translator.Services.Interfaces;
+
+/// <summary>
+/// Service for handling navigation between views.
+/// </summary>
+public interface INavigationService
+{
+   /// <summary>
+   /// Gets the current view model.
+   /// </summary>
+   ViewModelBase? CurrentViewModel { get; }
+
+   /// <summary>
+   /// Navigates to the specified view model type.
+   /// </summary>
+   void NavigateTo<T>() where T : ViewModelBase;
+
+   /// <summary>
+   /// Registers a view for a view model type.
+   /// </summary>
+   void RegisterViewForViewModel<TViewModel, TView>()
+       where TViewModel : ViewModelBase
+       where TView : UserControl;
+
+   /// <summary>
+   /// Event raised when navigation occurs.
+   /// </summary>
+   event EventHandler<AppNavigationEventArgs>? Navigated;
+}
+
+/// <summary>
+/// Event args for navigation events.
+/// </summary>
+public class AppNavigationEventArgs : EventArgs
+{
+   /// <summary>
+   /// Gets or sets the view model being navigated to.
+   /// </summary>
+   public ViewModelBase? ViewModel { get; set; }
+}
