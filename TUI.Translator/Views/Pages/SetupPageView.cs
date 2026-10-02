@@ -1,7 +1,7 @@
 using Afutrans.Core.ViewModels;
-using TUI.Translator.Binding;
 using Terminal.Gui.ViewBase;
 using Terminal.Gui.Views;
+using TUI.Translator.Binding;
 
 namespace TUI.Translator.Views.Pages;
 
@@ -21,15 +21,15 @@ public sealed class SetupPageView : View
         Width = Dim.Fill();
         Height = Dim.Fill();
 
-        Label title = new() { X = 1, Y = 0, Text = viewModel.Title };
-        Label description = new() { X = 1, Y = 1, Width = Dim.Fill(), Text = viewModel.Description };
-        Label nameLabel = new() { X = 1, Y = 3, Text = viewModel.NameLabel };
+        Label title = new() { X = 1, Y = 2, Text = viewModel.Title };
+        Label description = new() { X = 1, Y = 3, Width = Dim.Fill(), Text = viewModel.Description };
+        Label nameLabel = new() { X = 1, Y = 4, Text = viewModel.NameLabel };
 
-        NameInput = new TextField { X = 1, Y = 4, Width = 40, Text = viewModel.UserName };
+        NameInput = new TextField { X = 1, Y = 6, Width = 40, Text = viewModel.UserName };
 
-        Label previewCaption = new() { X = 1, Y = 6, Text = viewModel.PreviewLabel };
-        PreviewLabel = new Label { X = 3, Y = 7 };
-        HintLabel = new Label { X = 1, Y = 8, Width = Dim.Fill(), Text = viewModel.NameHint };
+        Label previewCaption = new() { X = 1, Y = 7, Text = viewModel.PreviewLabel };
+        PreviewLabel = new Label { X = 3, Y = 8 };
+        HintLabel = new Label { X = 1, Y = 9, Width = Dim.Fill(), Text = viewModel.NameHint };
 
         Label languageLabel = new() { X = 1, Y = 10, Text = viewModel.LanguageLabel };
 

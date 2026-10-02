@@ -1,7 +1,7 @@
 using Afutrans.Core.ViewModels;
-using TUI.Translator.Binding;
 using Terminal.Gui.ViewBase;
 using Terminal.Gui.Views;
+using TUI.Translator.Binding;
 
 namespace TUI.Translator.Views.Pages;
 
@@ -21,8 +21,8 @@ public sealed class MainPageView : View
         Width = Dim.Fill();
         Height = Dim.Fill();
 
-        Label title = new() { X = 1, Y = 0, Text = viewModel.Title };
-        Label description = new() { X = 1, Y = 1, Width = Dim.Fill(), Text = viewModel.Description };
+        Label title = new() { X = Pos.Center(), Y = 0, Text = viewModel.Title };
+        Label description = new() { X = Pos.Center(), Y = 1, Width = Dim.Fill(), Text = viewModel.Description };
         Label greetingCaption = new() { X = 1, Y = 3, Text = viewModel.GreetingCaption };
         Label greeting = new() { X = 3, Y = 4, Text = viewModel.GreetingFromService };
         Label serviceCaption = new() { X = 3, Y = 5, Text = viewModel.ServiceCaption };

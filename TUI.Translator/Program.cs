@@ -59,4 +59,4 @@ var pageViews = new PageViewFactory();
 // Instance lifecycle — NOT static Init/Run/Shutdown:  Create() -> Run(view) -> Dispose().
 using var app = Application.Create();
 using var window = new ShellWindow(shell, pageViews.Create);
-app.Run(window);
+app.Init().Run(window);

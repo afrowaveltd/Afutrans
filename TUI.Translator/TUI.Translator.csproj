@@ -24,5 +24,8 @@
     <Compile Remove="Tests\**" />
     <None Remove="Tests\**" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Locales\" />
+  </ItemGroup>
 
 </Project>

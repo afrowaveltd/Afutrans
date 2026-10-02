@@ -16,4 +16,11 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="JsonLocalization\" />
+    <Folder Include="Models\Enums\" />
+    <Folder Include="Models\Dto\" />
+    <Folder Include="Models\Entities\" />
+  </ItemGroup>
+
 </Project>
