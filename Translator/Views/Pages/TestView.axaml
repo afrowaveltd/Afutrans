@@ -1,0 +1,39 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Afutrans.Core.ViewModels"
+             x:Class="Translator.Views.Pages.TestView"
+             x:DataType="vm:TestViewModel">
+
+    <ScrollViewer>
+        <StackPanel Margin="24" Spacing="8" MaxWidth="560" HorizontalAlignment="Left">
+
+            <TextBlock Text="{Binding Title}" FontSize="24" FontWeight="SemiBold" />
+            <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Opacity="0.85" />
+
+            <!-- Login: validated on every change by the shared view model. -->
+            <TextBlock Text="{Binding LoginLabel}" Margin="0,12,0,0" />
+            <TextBox Text="{Binding Login}" />
+            <TextBlock Text="{Binding LoginError}" Foreground="#C62828" TextWrapping="Wrap" />
+
+            <TextBlock Text="{Binding PasswordLabel}" Margin="0,8,0,0" />
+            <TextBox Text="{Binding Password}" PasswordChar="•" />
+            <TextBlock Text="{Binding PasswordHint}" TextWrapping="Wrap" Opacity="0.7" />
+            <TextBlock Text="{Binding PasswordError}" Foreground="#C62828" TextWrapping="Wrap" />
+
+            <TextBlock Text="{Binding ConfirmPasswordLabel}" Margin="0,8,0,0" />
+            <TextBox Text="{Binding ConfirmPassword}" PasswordChar="•" />
+            <TextBlock Text="{Binding ConfirmPasswordError}" Foreground="#C62828" TextWrapping="Wrap" />
+
+            <TextBlock Text="{Binding FormMessage}" Margin="0,12,0,0" TextWrapping="Wrap" FontWeight="SemiBold" />
+
+            <!-- Command binding: the button follows SubmitCommand.CanExecute(null). -->
+            <StackPanel Orientation="Horizontal" Spacing="12" Margin="0,4,0,0">
+                <Button Content="{Binding SubmitLabel}" Command="{Binding SubmitCommand}" />
+                <Button Content="{Binding ResetLabel}" Command="{Binding ResetCommand}" />
+            </StackPanel>
+
+            <TextBlock Text="{Binding StatusMessage}" Margin="0,8,0,0" TextWrapping="Wrap" />
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

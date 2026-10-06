@@ -1,0 +1,40 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Afutrans.Core.ViewModels"
+             x:Class="Translator.Views.Pages.MainView"
+             x:DataType="vm:MainViewModel">
+
+    <!-- Everything here is bound to the SHARED view model from Afutrans.Core; this file contains
+         no logic at all, which is why the TUI can render the very same view model. -->
+    <ScrollViewer>
+        <StackPanel Margin="24" Spacing="10" MaxWidth="720" HorizontalAlignment="Left">
+
+            <TextBlock Text="{Binding Title}" FontSize="24" FontWeight="SemiBold" />
+            <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Opacity="0.85" />
+
+            <Border Margin="0,12,0,0" Padding="16" CornerRadius="8"
+                    Background="{DynamicResource SystemControlBackgroundChromeMediumLowBrush}">
+                <StackPanel Spacing="6">
+                    <TextBlock Text="{Binding GreetingCaption}" FontWeight="SemiBold" />
+                    <TextBlock Text="{Binding GreetingFromService}" FontSize="18" />
+                    <TextBlock Text="{Binding ServiceCaption}" Opacity="0.7" FontStyle="Italic" />
+                </StackPanel>
+            </Border>
+
+            <TextBlock Text="{Binding NameLabel}" Margin="0,12,0,0" />
+            <!-- Two-way: every keystroke flows straight into the shared view model. -->
+            <TextBox Text="{Binding Name}" Width="320" HorizontalAlignment="Left" />
+
+            <TextBlock Text="{Binding GreetingPreview}" FontSize="18" />
+            <TextBlock Text="{Binding ClickHint}" TextWrapping="Wrap" Opacity="0.75" />
+
+            <StackPanel Orientation="Horizontal" Spacing="12" Margin="0,8,0,0">
+                <Button Content="{Binding ClickButtonLabel}" Command="{Binding ClickCommand}" />
+                <Button Content="{Binding ResetLabel}" Command="{Binding ResetCommand}" />
+            </StackPanel>
+
+            <TextBlock Text="{Binding ClickCountText}" />
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

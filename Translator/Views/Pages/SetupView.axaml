@@ -1,0 +1,32 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Afutrans.Core.ViewModels"
+             x:Class="Translator.Views.Pages.SetupView"
+             x:DataType="vm:SetupViewModel">
+
+    <ScrollViewer>
+        <StackPanel Margin="24" Spacing="10" MaxWidth="720" HorizontalAlignment="Left">
+
+            <TextBlock Text="{Binding Title}" FontSize="24" FontWeight="SemiBold" />
+            <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Opacity="0.85" />
+
+            <TextBlock Text="{Binding NameLabel}" Margin="0,12,0,0" />
+            <!-- Reactive: the preview below follows every keystroke. -->
+            <TextBox Text="{Binding UserName}" Width="320" HorizontalAlignment="Left" />
+            <TextBlock Text="{Binding NameHint}" TextWrapping="Wrap" Opacity="0.7" />
+
+            <TextBlock Text="{Binding PreviewLabel}" Margin="0,8,0,0" FontWeight="SemiBold" />
+            <TextBlock Text="{Binding GreetingPreview}" FontSize="18" />
+
+            <TextBlock Text="{Binding LanguageLabel}" Margin="0,16,0,0" FontWeight="SemiBold" />
+            <!-- Picking a language switches the ILocalizer for the whole application. -->
+            <ComboBox ItemsSource="{Binding LanguageOptions}"
+                      SelectedItem="{Binding SelectedLanguage}"
+                      DisplayMemberBinding="{Binding DisplayName}"
+                      Width="220"
+                      HorizontalAlignment="Left" />
+            <TextBlock Text="{Binding CurrentLanguageText}" Opacity="0.8" />
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
