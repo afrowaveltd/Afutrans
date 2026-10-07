@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // Použití IntelliSense ke zjištění, které atributy existují pro ladění v jazyce C#
+            // Popis existujících atributů zobrazíte najetím myší
+            // Další informace najdete na https://github.com/dotnet/vscode-csharp/blob/main/debugger-launchjson.md.
+            "name": ".NET Core Launch (web)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            // Pokud jste změnili cílové architektury, nezapomeňte aktualizovat cestu k programu.
+            "program": "${workspaceFolder}/WebTranslator/bin/Debug/net10.0/WebTranslator.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/WebTranslator",
+            "stopAtEntry": false,
+            // Povolit spuštění webového prohlížeče při spuštění ASP.NET Core. Další informace: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        }
+    ]
+}
