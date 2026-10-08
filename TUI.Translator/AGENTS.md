@@ -20,11 +20,11 @@ log** — to verify visuals, run under a PTY recorder (`tuirec`) or drive it hea
 ## The canonical minimal app (this is the shape — copy it)
 ```csharp
 using Terminal.Gui.App;           // Application, IApplication, MessageBox
-using Terminal.Gui.Configuration; // ConfigurationManager
+using Terminal.Gui.Configuration; // TuiConfigurationBuilder
 using Terminal.Gui.ViewBase;      // View, Pos, Dim
 using Terminal.Gui.Views;         // Window, Label, Button, ...
 
-ConfigurationManager.Enable (ConfigLocations.All);
+new TuiConfigurationBuilder ().ApplyToStaticFacades ();
 
 // INSTANCE lifecycle — not static Init/Run/Shutdown:
 Application.Create ().Run<MainWindow> ().Dispose ();

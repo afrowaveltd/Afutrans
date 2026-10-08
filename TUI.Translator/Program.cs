@@ -23,13 +23,11 @@ using Afutrans.Core.Localization;
 using Afutrans.Core.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using Terminal.Gui.App;           // Application, IApplication, MessageBox
-using Terminal.Gui.Configuration; // ConfigurationManager
+using Terminal.Gui.Configuration;
 using TUI.Translator.Navigation;
 using TUI.Translator.Views;
 
-#pragma warning disable CS0618 // Type or member is obsolete.
-ConfigurationManager.Enable(ConfigLocations.All);
-#pragma warning restore CS0618 // Type or member is obsolete.
+new TuiConfigurationBuilder().ApplyToStaticFacades();
 
 // English is the default language; `--culture cs` shows the shared localizer at work.
 var culture = args
