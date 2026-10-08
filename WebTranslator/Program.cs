@@ -1,3 +1,7 @@
+using Serilog;
+using Serilog.Events;
+using Serilog.Sinks.SystemConsole.Themes;
+
 const string ConsoleOutputTemplate = """
 ┌──────────────────────────────────────────────────────────────────────────────
 │ {Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}]
@@ -24,6 +28,22 @@ const LogEventLevel AspNetCoreMinimumLevel = LogEventLevel.Warning;
 const LogEventLevel RequestSuccessLevel = LogEventLevel.Information;
 const LogEventLevel JsonFileMinimumLevel = LogEventLevel.Information;
 const double SlowRequestThresholdMs = 1000;
+#endif
+
+// Bootstrap logger used before DI container is fully built.
+Log.Logger = new LoggerConfiguration()
+   .MinimumLevel.Is(BootstrapMinimumLevel)
+   .MinimumLevel.Override("Microsoft", FrameworkMinimumLevel)
+   .MinimumLevel.Override("Microsoft.AspNetCore", AspNetCoreMinimumLevel)
+   .MinimumLevel.Override("System", FrameworkMinimumLevel)
+   .Enrich.FromLogContext()
+#if DEBUG
+   .WriteTo.Console(
+      restrictedToMinimumLevel: LogEventLevel.Verbose,
+      theme: AnsiConsoleTheme.Code,
+      outputTemplate: ConsoleOutputTemplate)
+#endif
+   .CreateBootstrapLogger();
 
 var builder = WebApplication.CreateBuilder(args);
 
