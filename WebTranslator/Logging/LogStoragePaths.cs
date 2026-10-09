@@ -15,9 +15,9 @@ namespace WebTranslator.Logging;
 /// </remarks>
 public class LogStoragePaths
 {
-   private const int FallbackRetentionDaysInfo = 7;
-   private const int FallbackRetentionDaysWarning = 30;
-   private const int FallbackCleanupIntervalHours = 24;
+   public const int FallbackRetentionDaysInfo = 7;
+   public const int FallbackRetentionDaysWarning = 30;
+   public const int FallbackCleanupIntervalHours = 24;
 
    public LogStoragePaths(IConfiguration configuration, IHostEnvironment environment)
    {
