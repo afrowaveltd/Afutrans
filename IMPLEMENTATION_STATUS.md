@@ -31,10 +31,19 @@ This file is the continuation point for the Afutrans project. Update it after ea
 - Only Markdown documentation changed. **No build/test suite was run in this pass**, so no new green-test claim is made.
 - Markdown links target known files/directories in the current repository or explicit external GitHub source documents.
 
+## 2026-10-11 — bundled Unicode CLDR 48.2.3 reference data
+
+- Added **11 upstream, unmodified supplemental CLDR JSON data files** under `Afutrans.Core/Jsons/Cldr/`: cardinal plurals, ordinals, plural ranges, gender, grammatical features, territory info, territory containment, language data, likely subtags, parent locales and aliases.
+- Pinned the upstream release `48.2.3` (published 2026-09-30), source commit `91c267402229a59e3ef2774544f001bf959e8809`, upstream blob identifiers in `manifest.json`, and the full Unicode-3.0 `LICENSE`.
+- Added local CLDR README and `Docs/CLDR-Reference-Data/en.md`, and linked the new reference assets from the root README.
+- Preserved the original `Afutrans.Core/Jsons/languages.json` exactly; no project files, executable code, runtime EF Core integration, rules interpreter or locale fallback code changed.
+- The datasets were parsed as JSON at preparation time and checked for CLDR major version 48, cardinal rules for `cs`/`en`/`sw`/`ar`, Uganda language associations, Africa region containment and locale parent metadata.
+- **Validation scope:** data-source integrity and GitHub file checks only. No `dotnet build` or `dotnet test` was run; no runtime capability is claimed.
+
 ## Next continuation
 
 1. Agree on initial cross-project translation request/result, target and provider contracts against current UnderstandMe documentation; do not treat legacy Dita DTOs as universal provider contracts.
 2. Resolve .NET 10/11 package/reference boundaries and the Essentials/WhenItFails dependency versions before integration.
 3. Define typed ScheduledTask/TaskExecution and EF Core store/claim semantics, scan handoff acknowledgement, and WorkLedger/WorkReport-to-Logger correlation without introducing unnecessary scheduling priority or missed-run policies.
-4. Build a small, end-to-end vertical slice with a test provider before adding actual optional LibreTranslate integration and expanding the Afutrans hosts.
+4. Implement an optional, separately tested offline CLDR data reader/importer and plural-rule resolver **without coupling basic dictionary-less lookup to CLDR**. Then build a small, end-to-end vertical slice with a test provider before adding actual optional LibreTranslate integration and expanding the Afutrans hosts.
 5. Keep root `README.md`, topic-specific English documentation, tests and this status file synchronized and commit each incremental change.

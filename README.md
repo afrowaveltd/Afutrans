@@ -164,6 +164,12 @@ Implementation will proceed in small, tested, documented increments. In particul
 
 Keep this README focused on **what Afutrans is for**, and use the more detailed design documents to explain contracts and edge cases. Explicitly distinguish **implemented**, **in progress**, and **planned** behavior as development advances.
 
+## Bundled localization reference data
+
+The [`Afutrans.Core/Jsons/Cldr/`](Afutrans.Core/Jsons/Cldr/) directory contains **pinned Unicode CLDR 48.2.3 supplemental JSON reference data** for future offline locale/plural-rule resolution, country-language catalog enrichment, and grammar metadata. The original `Afutrans.Core/Jsons/languages.json` is preserved without modifications.
+
+These are upstream reference datasets, **not implemented translation dictionaries, rules evaluators, or running services**. Future opt-in importers and adapters will keep simple flat `en.json`, `cs.json`, and other dictionaries usable without CLDR or grammar metadata. See [CLDR reference data and import plan](Docs/CLDR-Reference-Data/en.md).
+
 ## Documentation and project status
 
 - [Afutrans implementation status](IMPLEMENTATION_STATUS.md) — verified baseline, changes, next continuation point.
