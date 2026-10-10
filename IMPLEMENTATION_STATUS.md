@@ -40,6 +40,12 @@ This file is the continuation point for the Afutrans project. Update it after ea
 - The datasets were parsed as JSON at preparation time and checked for CLDR major version 48, cardinal rules for `cs`/`en`/`sw`/`ar`, Uganda language associations, Africa region containment and locale parent metadata.
 - **Validation scope:** data-source integrity and GitHub file checks only. No `dotnet build` or `dotnet test` was run; no runtime capability is claimed.
 
+## 2026-10-11 — linked canonical UnderstandMe grammar/hint design (documentation only)
+
+- Linked `Docs/CLDR-Reference-Data/en.md` to the now-committed UnderstandMe [layered localization, hints and grammar design](https://github.com/afrowaveltd/Toolbox/blob/master/UnderstandMe/Docs/Grammar-Hints-and-Variants/en.md) in Toolbox `master`.
+- The reference data remains pinned and untouched; the future Afutrans importer/editor must preserve per-locale manual overrides and dictionary-less runtime fallback.
+- **No code, runtime behavior, NuGet references, project files or CLDR datasets changed. No build/test run.**
+
 ## Next continuation
 
 1. Agree on initial cross-project translation request/result, target and provider contracts against current UnderstandMe documentation; do not treat legacy Dita DTOs as universal provider contracts.

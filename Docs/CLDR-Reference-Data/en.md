@@ -8,6 +8,10 @@ Afutrans stores pinned [Unicode CLDR JSON 48.2.3](https://github.com/unicode-org
 
 This change does not modify existing `Afutrans.Core/Jsons/languages.json` or the runtime `Afutrans.Core.Localization.Localizer`; it does not create `CountryLanguages` rows, an EF Core migration, plural evaluation, or translated grammar variant files.
 
+## Cross-project design contract
+
+The canonical *future* grammar and hint architecture is captured in [UnderstandMe's Layered Localization, Hints and Grammar Variants](https://github.com/afrowaveltd/Toolbox/blob/master/UnderstandMe/Docs/Grammar-Hints-and-Variants/en.md). Basic **dictionary-less startup** and flat JSON localizers must work even with no CLDR data or grammar sidecars. The old localization indexer remains unchanged; a future optional overload may accept composable typed hints before the positional arguments. Afutrans acts as a future generation/import/editor host, while UnderstandMe owns reusable runtime contracts. **None of these runtime features is implemented by bundling the reference data.**
+
 ## Sources and intended use
 
 - Cardinal, ordinal and range plural rules: `plurals.json`, `ordinals.json`, `pluralRanges.json`. CLDR expressions contain operands such as `n`, `i`, `v`, `f` and example annotations after `@`; an interpreter or validated rule compiler is still required.
