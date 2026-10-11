@@ -1,0 +1,66 @@
+{
+  "dataset": "Unicode CLDR JSON supplemental reference data",
+  "sourceRepository": "unicode-org/cldr-json",
+  "sourceTag": "48.2.3",
+  "sourceCommit": "91c267402229a59e3ef2774544f001bf959e8809",
+  "cldrMajorVersion": "48",
+  "retrievedFor": "Afutrans offline reference data; future importer (not runtime-enabled yet)",
+  "license": "Unicode-3.0",
+  "files": [
+    {
+      "file": "plurals.json",
+      "source": "cldr-json/cldr-core/supplemental/plurals.json",
+      "upstreamGitBlobSha": "54e13eabc71d3897a0fd90fab1196c1ff284c26c"
+    },
+    {
+      "file": "ordinals.json",
+      "source": "cldr-json/cldr-core/supplemental/ordinals.json",
+      "upstreamGitBlobSha": "6688e999134b745e7c317a70d6342edfe815e507"
+    },
+    {
+      "file": "pluralRanges.json",
+      "source": "cldr-json/cldr-core/supplemental/pluralRanges.json",
+      "upstreamGitBlobSha": "83d2fbfedaed5e5b1e88060a7d5207a3b69873fa"
+    },
+    {
+      "file": "gender.json",
+      "source": "cldr-json/cldr-core/supplemental/gender.json",
+      "upstreamGitBlobSha": "202921542103cf089c24be0e121dbe7e600dbade"
+    },
+    {
+      "file": "grammaticalFeatures.json",
+      "source": "cldr-json/cldr-core/supplemental/grammaticalFeatures.json",
+      "upstreamGitBlobSha": "1e30f3ce5d9a35f00a9d913596be79d517ca3e32"
+    },
+    {
+      "file": "territoryInfo.json",
+      "source": "cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "upstreamGitBlobSha": "f4d1177ca41700e17fecce40ae368ea1ccf59547"
+    },
+    {
+      "file": "territoryContainment.json",
+      "source": "cldr-json/cldr-core/supplemental/territoryContainment.json",
+      "upstreamGitBlobSha": "d2c92050c808b05d0841771580a5afc2b9baecd8"
+    },
+    {
+      "file": "languageData.json",
+      "source": "cldr-json/cldr-core/supplemental/languageData.json",
+      "upstreamGitBlobSha": "4a52485243332092600f98cbcf79ed37211f55be"
+    },
+    {
+      "file": "likelySubtags.json",
+      "source": "cldr-json/cldr-core/supplemental/likelySubtags.json",
+      "upstreamGitBlobSha": "0683a73eda4fc87032e1fdc04574ccdac4a835e4"
+    },
+    {
+      "file": "parentLocales.json",
+      "source": "cldr-json/cldr-core/supplemental/parentLocales.json",
+      "upstreamGitBlobSha": "6f86f53cf2dd2b874e803ea093b3e91489365161"
+    },
+    {
+      "file": "aliases.json",
+      "source": "cldr-json/cldr-core/supplemental/aliases.json",
+      "upstreamGitBlobSha": "881bf84111a7cfdbeaa1b04837efebfc29e3d859"
+    }
+  ]
+}
