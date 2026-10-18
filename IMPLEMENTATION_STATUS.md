@@ -53,3 +53,16 @@ This file is the continuation point for the Afutrans project. Update it after ea
 3. Define typed ScheduledTask/TaskExecution and EF Core store/claim semantics, scan handoff acknowledgement, and WorkLedger/WorkReport-to-Logger correlation without introducing unnecessary scheduling priority or missed-run policies.
 4. Implement an optional, separately tested offline CLDR data reader/importer and plural-rule resolver **without coupling basic dictionary-less lookup to CLDR**. Then build a small, end-to-end vertical slice with a test provider before adding actual optional LibreTranslate integration and expanding the Afutrans hosts.
 5. Keep root `README.md`, topic-specific English documentation, tests and this status file synchronized and commit each incremental change.
+
+
+## 2026-10-18 — UnderstandMe localization baseline and integration boundary
+
+- [UnderstandMe in Toolbox](https://github.com/afrowaveltd/Toolbox/tree/master/UnderstandMe/Localization) now contains an independent .NET 10 flat-JSON localizer with source-key discovery, culture fallbacks, basic named placeholders, explicit reload and a pluggable store.
+- The new UnderstandMe test project has **14/14 passed tests** in the [verified Toolbox CI run](https://github.com/afrowaveltd/Toolbox/actions/runs/39167610994). The entire Toolbox solution reported 5,928 passed tests and zero build warnings.
+- **Afutrans has not yet been integrated or tested against UnderstandMe.** No new package reference, migration, UI behavior or automatic translation integration should be claimed.
+- The existing Afutrans.Core `ILocalizer`, `Localizer`, `StringKeys` and built-in catalogs are generated/provisional UI scaffolding. They may be refactored or replaced as needed to implement the agreed design. Crucially, they currently use symbolic keys (e.g. `App.Title`), so any switch to source-text `key=value` dictionaryless behavior must explicitly supply/migrate source phrases rather than displaying symbolic keys.
+- **Do not rewrite the manually started user-authored WebTranslator project.** Avoid breaking its build and published host contract while making core/library changes; dedicated web business REST and SignalR integration remains a future, separately reviewed step.
+- Dita is completely separate and inspiration-only: no code or runtime dependency may be copied into UnderstandMe or Afutrans.
+- Next Afutrans work: once an UnderstandMe project/package dependency is reliably consumable, add an adapter against its stable localization interface, rework generated GUI/TUI scaffolds as desired, migrate source catalogs to shared flat JSON and run **Afutrans.Core.Tests and GUI/TUI build validation**. Only then extend placeholder metadata, hot reload, or background translation testing.
+
+Documentation-only Afutrans change; the web application and all source code remain untouched.
