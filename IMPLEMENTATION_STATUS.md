@@ -66,3 +66,11 @@ This file is the continuation point for the Afutrans project. Update it after ea
 - Next Afutrans work: once an UnderstandMe project/package dependency is reliably consumable, add an adapter against its stable localization interface, rework generated GUI/TUI scaffolds as desired, migrate source catalogs to shared flat JSON and run **Afutrans.Core.Tests and GUI/TUI build validation**. Only then extend placeholder metadata, hot reload, or background translation testing.
 
 Documentation-only Afutrans change; the web application and all source code remain untouched.
+
+## 2026-10-19 — configuration sources and independent target polling (design)
+
+- The canonical UnderstandMe design now explicitly supports host-provided settings via `appsettings.json`/IConfiguration, constructor/DI typed options or a custom configuration source. Provider choice, dictionary/metadata accessors, optional notifications/transports and per-target scheduled discovery can be configured independently.
+- A target may never emit change events. Afutrans can use a configured **scheduled target scanner** to inspect SQL, API or file-backed dictionaries, compare revisions/snapshots and submit only relevant source changes through normal orchestration.
+- Polling complements REST, SignalR or local change events, but requires neither. Push and pull must be deduplicated and share one idempotent job admission path; a translated target update must not create a translation loop.
+- Preserve existing planned Scheduler policy: EF Core persistent `NextRunAtUtc`, configurable startup delay, interval after completion, non-overlap of the same task and durable handoff of work rather than waiting for the translation to finish.
+- [Canonical configuration and scanning design](https://github.com/afrowaveltd/Toolbox/blob/master/UnderstandMe/Docs/Localization/Configuration-and-Change-Detection/en.md). Documentation only: no scheduled scanner, provider or host API was implemented; the manually authored WebTranslator remains untouched.
