@@ -1,0 +1,107 @@
+{
+  "dataset": "Unicode CLDR JSON 48.2.3 — additional locale and formatting reference data",
+  "sourceRepository": "unicode-org/cldr-json",
+  "sourceTag": "48.2.3",
+  "sourceCommit": "91c267402229a59e3ef2774544f001bf959e8809",
+  "sourceLicense": "Unicode-3.0",
+  "licenseFile": "Afutrans.Core/Jsons/Cldr/LICENSE",
+  "addedOn": "2026-10-19",
+  "note": "Additional assets only; the original manifest.json retains the prior supplemental file inventory. Current languages.json and original CLDR files are unchanged. These sources are not used at runtime yet.",
+  "files": [
+    {
+      "file": "LocalNames/en/languages.json",
+      "source": "cldr-json/cldr-localenames-full/main/en/languages.json",
+      "upstreamGitBlobSha": "6792bb4989204e75287fc87f99680eb142d21712"
+    },
+    {
+      "file": "LocalNames/cs/languages.json",
+      "source": "cldr-json/cldr-localenames-full/main/cs/languages.json",
+      "upstreamGitBlobSha": "39452dde0fa983e3c5f507f242498fa978e43428"
+    },
+    {
+      "file": "LocalNames/sw/languages.json",
+      "source": "cldr-json/cldr-localenames-full/main/sw/languages.json",
+      "upstreamGitBlobSha": "9f2903a53b9c77d7071336a2b1e3cc8544d1aef0"
+    },
+    {
+      "file": "LocalNames/lg/languages.json",
+      "source": "cldr-json/cldr-localenames-full/main/lg/languages.json",
+      "upstreamGitBlobSha": "e93e4b5c2141a6802e1cc23a1cfb5c6ff6269e96"
+    },
+    {
+      "file": "LocalNames/rw/languages.json",
+      "source": "cldr-json/cldr-localenames-full/main/rw/languages.json",
+      "upstreamGitBlobSha": "270d2e84cc1bdb1527abcf6d01a7eea394754c3c"
+    },
+    {
+      "file": "LocalNames/fr/languages.json",
+      "source": "cldr-json/cldr-localenames-full/main/fr/languages.json",
+      "upstreamGitBlobSha": "962bbb6521a7371775b24afbdd02036831a2f88e"
+    },
+    {
+      "file": "LocalNames/ar/languages.json",
+      "source": "cldr-json/cldr-localenames-full/main/ar/languages.json",
+      "upstreamGitBlobSha": "c19d17d865b1f40ac53e6cd89aa86ba9bdb4bb8a"
+    },
+    {
+      "file": "LocalNames/ha/languages.json",
+      "source": "cldr-json/cldr-localenames-full/main/ha/languages.json",
+      "upstreamGitBlobSha": "6de3215ebd6ce8a24bd1236060e60e866bff6576"
+    },
+    {
+      "file": "LocalNames/en/territories.json",
+      "source": "cldr-json/cldr-localenames-full/main/en/territories.json",
+      "upstreamGitBlobSha": "3f3a27182aee6260c3e5a4ee6ba5c8327550c199"
+    },
+    {
+      "file": "LocalNames/cs/territories.json",
+      "source": "cldr-json/cldr-localenames-full/main/cs/territories.json",
+      "upstreamGitBlobSha": "43dab1d31a3585df86750fb377dd57cae64720ed"
+    },
+    {
+      "file": "LocalNames/sw/territories.json",
+      "source": "cldr-json/cldr-localenames-full/main/sw/territories.json",
+      "upstreamGitBlobSha": "0dd7c666af7ead4130d4986c4ecdba18c3c6433f"
+    },
+    {
+      "file": "LocalNames/lg/territories.json",
+      "source": "cldr-json/cldr-localenames-full/main/lg/territories.json",
+      "upstreamGitBlobSha": "ed4660b1c3bb068545604c73859ec259ae9fd1ec"
+    },
+    {
+      "file": "LocalNames/en/scripts.json",
+      "source": "cldr-json/cldr-localenames-full/main/en/scripts.json",
+      "upstreamGitBlobSha": "687bfb33ebc7d80f37f9411ee523b5a56a9c3aa3"
+    },
+    {
+      "file": "LocalNames/cs/scripts.json",
+      "source": "cldr-json/cldr-localenames-full/main/cs/scripts.json",
+      "upstreamGitBlobSha": "53594062ab6e209f37b392fe9f3e5de0f1aff4f5"
+    },
+    {
+      "file": "Layout/ar/layout.json",
+      "source": "cldr-json/cldr-misc-full/main/ar/layout.json",
+      "upstreamGitBlobSha": "43cff941f26abba7ff70b5f94c0bc0f8e3757388"
+    },
+    {
+      "file": "Layout/he/layout.json",
+      "source": "cldr-json/cldr-misc-full/main/he/layout.json",
+      "upstreamGitBlobSha": "90b18c9f23177b3cc06c044c226bc094a4939419"
+    },
+    {
+      "file": "Layout/en/layout.json",
+      "source": "cldr-json/cldr-misc-full/main/en/layout.json",
+      "upstreamGitBlobSha": "2585244056de6c68f171a26424d044a51a6ec0bf"
+    },
+    {
+      "file": "numberingSystems.json",
+      "source": "cldr-json/cldr-core/supplemental/numberingSystems.json",
+      "upstreamGitBlobSha": "51c8f4ed26a54aaa2a24df52e1758d4828412c70"
+    },
+    {
+      "file": "weekData.json",
+      "source": "cldr-json/cldr-core/supplemental/weekData.json",
+      "upstreamGitBlobSha": "9bb18ddf399bf8a07775d6d4951b04c653e93115"
+    }
+  ]
+}

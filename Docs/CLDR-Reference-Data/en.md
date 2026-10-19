@@ -33,3 +33,10 @@ The canonical *future* grammar and hint architecture is captured in [UnderstandM
 The bundled files are from upstream release `48.2.3` at `91c267402229a59e3ef2774544f001bf959e8809`. See the [file manifest](../../Afutrans.Core/Jsons/Cldr/manifest.json) and [Unicode-3.0 license](../../Afutrans.Core/Jsons/Cldr/LICENSE). Keep provenance and license on every update. Existing user-authored translations and metadata must be preserved during later reference-data refreshes.
 
 The independently reusable UnderstandMe library should expose relevant locale/grammar contracts; Afutrans is a host and potential importer/editor, not a required runtime dependency for ordinary dictionary lookup.
+
+## More CLDR assets saved for later work (2026-10-19)
+
+Added **19 official JSON files**, pinned to CLDR 48.2.3: eight localized language-name catalogs (`en`, `cs`, `sw`, `lg`, `rw`, `fr`, `ar`, `ha`); four localized territory-name catalogs (`en`, `cs`, `sw`, `lg`); scripts (`en`, `cs`); orientation (`en`, `ar`, `he`); plus `numberingSystems.json` and `weekData.json`. See the [additional manifest](../../Afutrans.Core/Jsons/Cldr/manifest-additional.json) with upstream Git blob SHAs and [README](../../Afutrans.Core/Jsons/Cldr/README.md).
+
+They supplement—but do not replace—the existing `languages.json` with manually useful native names, and do not provide a completed locale provider or complete endonym coverage. No runtime or project build/publish configuration was changed. Their upstream source/Unicode-3.0 license and version are preserved for future UnderstandMe reuse.
+

@@ -83,3 +83,11 @@ Documentation-only Afutrans change; the web application and all source code rema
 - A dictionaryless catalog retains old discovered phrases even when the application stops referring to them; a source-dictionary diff alone **cannot prove key disuse**. Optional active-release key manifests and aggregated per-key usage allow stronger evidence; rare screens, offline or older deployed clients must be respected.
 - Proposed per-target reversible `Active -> SuspectedUnused -> Archived` policy. Physical deletion remains separately authorized and disabled by default. No translation/metadata history or manual work is destroyed based solely on an inactivity timer.
 - [Canonical planned design](https://github.com/afrowaveltd/Toolbox/blob/master/UnderstandMe/Docs/Localization/Dictionary-Snapshots-and-Key-Lifecycle/en.md). This is documentation-only; Scheduler, scanning, key lifecycle and automatic translation are **not** yet implemented in Afutrans. User-authored WebTranslator source remains untouched.
+
+## 2026-10-19 — additional offline CLDR reference data
+
+- Added **19 unmodified JSON reference files** from pinned Unicode CLDR 48.2.3 in `Afutrans.Core/Jsons/Cldr/LocalNames`, `Layout`, `numberingSystems.json` and `weekData.json`.
+- Localized language names: `en`, `cs`, `sw`, `lg`, `rw`, `fr`, `ar`, `ha`; localized territory names: `en`, `cs`, `sw`, `lg`; script names: `en`, `cs`; layout: `en`, `ar`, `he`. Additional number system and week-convention reference data are retained.
+- Added `manifest-additional.json` with source path, pinned release/commit, Git blob SHA, and Unicode-3.0 license reference; updated CLDR README and `Docs/CLDR-Reference-Data/en.md`.
+- No existing `languages.json`, original CLDR assets or application source was changed. **No new runtime, import or language-rule implementation is implied; these are stored reusable datasets only.** Future shared UnderstandMe module/provider still pending.
+

@@ -39,3 +39,21 @@ This directory carries unmodified **Unicode CLDR JSON 48.2.3** supplemental file
 8. The data are source-controlled **references**. No new project build-copy or runtime initialization behavior has been added.
 
 For the development plan and planned integration boundaries, see [the English CLDR data guide](../../../Docs/CLDR-Reference-Data/en.md).
+
+## Additional CLDR 48.2.3 offline assets (2026-10-19)
+
+Additional **19 original JSON files** are vendored, preserving exact Unicode CLDR source contents. [The additional manifest](manifest-additional.json) records each official upstream path and Git blob SHA. The existing [Unicode-3.0 license](LICENSE) applies to these files, and the original [manifest.json](manifest.json) remains unchanged.
+
+| Directory/file | Data available | Future possible usage |
+| --- | --- | --- |
+| `LocalNames/{en,cs,sw,lg,rw,fr,ar,ha}/languages.json` | Names of languages translated *into the named locale* | Menus with localized names, expanded language catalogue and endonym lookup when each language's own locale data exists |
+| `LocalNames/{en,cs,sw,lg}/territories.json` | Translated country/region names | Country picker and regional filters |
+| `LocalNames/{en,cs}/scripts.json` | Translated script names | BCP 47 script selectors and multilingual language menu |
+| `Layout/{en,ar,he}/layout.json` | Character and line orientation per locale | Sample RTL/LTR layout information; actual mixed-script direction still needs locale/script-aware resolution |
+| `numberingSystems.json` | Decimal digits and other numbering systems | Formatting language-specific numerals |
+| `weekData.json` | First day of week/weekend and related CLDR territory conventions | Calendar and locale-sensitive scheduling UI |
+
+**Read carefully:** This is *reference data only*. CLDR `languages.json` files in `LocalNames/` are localized display names and do **not** replace `../languages.json` or automatically represent all endonyms. `territoryInfo.json` separately maps languages to countries and is incomplete for some minorities/migrants. These datasets do not imply that an external translator supports every language, nor do they add a runtime CLDR parser or a new API.
+
+The future canonical shared catalog/provider should live in Toolbox UnderstandMe as an optional component. Move or deduplicate these pinned assets **only after** a tested provider can consume them without losing manually curated names and metadata. Do not make base localization require CLDR.
+
