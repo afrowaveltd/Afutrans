@@ -90,3 +90,12 @@ Offer a **publicly understandable operating-cost dashboard** (the label `paywall
 8. Dedicated VPS failure causes tenant-specific degradation and honest capacity reporting; community/internal pools continue with their reserved capacity.
 
 **Implementation status:** product and architectural documentation only. No dynamic lanes, BYO provider portal, tenant deployment, payment processor, transparency dashboard or new tests are implemented in this change.
+
+## 2026-10-20 — voluntary spare-buffer exchange and prefer-delay policy
+
+**Owner clarification:** prefer **slower processing and visible waiting** over arbitrary cumulative translation quotas that force free users to pay or stop after credits run out. Explicit deferred CommunityFree tasks use safe durable admission and fair processing, subject to real queue/storage/abuse constraints and honest backpressure rather than unlimited acceptance.
+
+QueueMaster's isolated lanes **may borrow spare backend buffers** only by a separate owner-approved, revocable, non-guaranteed capacity policy. When Afrowave Internal has extra P0-capable worker slots, idle capacity may be **offered to community** without changing reserved internal realtime minima. Reclaim at the next safe slot boundary, not by falsely claiming an in-flight non-preemptible provider call can be instantly interrupted. Owner-supplied AI ↔ LibreTranslate sharing is **voluntary in each direction**, subject to both the donor's spend/privacy allowances and the content owner's processor consent. A client can route its own realtime to its own engine and approved other work to borrowed/community endpoints.
+
+Own server need not expose inbound ports when an approved **outbound connector agent** is available. The owner's rough estimate of **USD 6/month** for a basic VPS is illustrative only; machine suitability/pricing and actual cost transparency require measurements. Full proposal: [Cooperative Backend Sharing](../Cooperative-Backend-Sharing/en.md). **Design only.**
+

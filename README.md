@@ -206,3 +206,7 @@ Afutrans and UnderstandMe are developed in the open as part of the Afrowave soft
 
 See [Dedicated Capacity, BYO Backends and Transparency](Docs/Dedicated-Capacity-BYO-Backends-and-Transparency/en.md). This supersedes the earlier proposed paid priority over shared CommunityFree work.
 
+### Adaptive community waiting and shared backend capacity (planned)
+
+Default public service direction: **no arbitrary total-translation credit wall**; use honest, finite durable deferred job admission and slower processing under load, with fair backpressure/abuse safeguards. Queue lanes remain protected, but an owner may voluntarily lend an **idle** bounded LibreTranslate/AI endpoint buffer to another authorized lane; reclaim future slots when needed, without claiming that already running work is instantly preemptible. A user may run their own realtime provider and choose community/other eligible engines for deferred work. Two-way AI ↔ LibreTranslate resource sharing is optional, privacy/consent/budget-limited in each direction. A self-hosted backend may connect via authenticated outbound agent even without inbound ports. See [Cooperative Backend Sharing](Docs/Cooperative-Backend-Sharing/en.md).
+

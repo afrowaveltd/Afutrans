@@ -66,3 +66,10 @@ A contributor's benefit may be **higher throughput / more available workers / a 
 8. Track separately estimated infrastructure costs, actual provider-account charges and contribution payments, without logging text or payment secrets into public monitoring.
 
 **Status:** documentation only; no subscription, payment processor, paid entitlement, worker allocation, multi-VPS capacity reservation or API gateway was implemented by this design.
+
+## Current policy refinement — no artificial translation credit exhaustion (2026-10-20)
+
+**Superseding operator preference:** avoid hard per-month/per-lifetime **translation count/word allowances** as the normal free-community experience. Prefer explicit durable deferred requests that become slower when resources are busy, with bounded fair intake/concurrency/storage and clear queue status. Admission must fail honestly on actual capacity/safety limits rather than inventing unlimited persistent storage. Genuine P0 cannot silently turn into deferred persistent or Human work.
+
+Optional best-effort idle-worker *donations* do not grant paid priority in the common pool. Separate protected lanes remain, and dedicated tenants may choose to lend authorized endpoint buffers temporarily or supply their own backend. See [Cooperative Backend Sharing](../Cooperative-Backend-Sharing/en.md). All older shared-queue paid-priority and arbitrary free per-period quota examples are nonbinding and superseded where conflicting.
+
