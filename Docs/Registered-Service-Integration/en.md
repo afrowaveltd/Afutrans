@@ -50,7 +50,7 @@ Id (accounts + application/service registry + access grants)
 
 ## Connector and credential boundaries
 
-- **Folders/files:** use a configured authorized local root with path containment and permissions, or a remote connection via **SFTP** (SSH) or suitably configured FTPS/HTTPS. Plaintext legacy FTP must not carry dictionary contents or credentials over an untrusted network.
+- **Folders/files:** allow an authorized local root or owner-selected network protocol. Prefer encrypted **SFTP, FTPS or HTTPS**; also permit explicitly opted-in classic FTP / HTTP test connectors with a clear confidentiality/integrity warning, isolated least-privilege workers and strict network/resource boundaries. Insecure target connections never carry Id's privileged credentials or authorize unencrypted Id SSO callbacks; a host may restrict its own supported connector set.
 - **SQL/other databases:** support capability-scoped read or read/write DataAccess connectors, configured connection-string reference and provider-specific settings. Prefer a remote **application-controlled agent/push endpoint** when the database need not be publicly reachable. Never use an entire DBA/admin connection string merely to sync localization.
 - A developer may enter connector details in the authorized Afutrans configuration UI or their own application-side integration; **Id should hold only service registration/grants and opaque references**, not collect raw FTP passwords, database connection strings or contents just because it is the identity provider.
 - Secrets remain encrypted or in an appropriate secrets manager with least-privilege read rights, rotation/revocation and no exposure in URL parameters, page HTML, logs, audit exports, SignalR events or translation model prompts. Test redaction.
@@ -95,3 +95,10 @@ Names are placeholders, not additional compulsory projects or NuGet dependencies
 
 **Implementation status:** architectural documentation only. No Id registry/service-discovery connector, SFTP/SQL credential UI, public Afutrans business REST/SignalR, cookie router or subscription workflow has been implemented by this decision. The existing Toolbox `UnderstandMe` offline localizer and editable language JSON catalog are independent groundwork, not proof of these integration scenarios.
 
+## Owner's transport choice and opt-in community dictionary publication (2026-10-20)
+
+An application owner may deliberately configure **classic unencrypted FTP** or non-sensitive test HTTP sources; Afutrans prominently warns about credential/content interception and integrity risk instead of prohibiting all insecure options by default. Insecure source connectors must be isolated and lack access to Id, other tenants and platform secrets. Id login/authorization-code transport still follows secure first-party authentication rules, regardless of the target app's publication choice.
+
+Afutrans plainly discloses that it technically accesses connected dictionary content in order to process translations. Dictionaries remain **private by default**. An owner may separately opt in to publish selected eligible phrases or a reviewed eligible dictionary to a community-wide shared translation memory; public service listing is **not** dictionary-publication consent. Shared entries require compatible source/target culture, placeholders, meaning/context, review, provenance and explicit redistribution rights. Never pool private chat or proprietary data implicitly. Unpublication stops future managed sharing but cannot revoke previously downloaded copies.
+
+Detailed architecture, suggested UI disclosure and tests: [Connector Trust and Community Dictionaries](../Connector-Trust-and-Community-Dictionaries/en.md). **Design only.**

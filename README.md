@@ -30,6 +30,13 @@ Afutrans can be registered in Afrowave **Id** as a service application, run tran
 Id owns first-party identity, application/service discovery and scoped access grants; Afutrans owns translation targets, provider orchestration and dictionary handling; UnderstandMe remains a reusable offline-capable engine. Login sessions/cookies belong to each application (Id has its own limited login cookie), not a shared tracking router. **No Id connection, network listener, provider or user-tracking integration becomes mandatory.** See [Registered Service Integration](Docs/Registered-Service-Integration/en.md) for boundaries and future workflows.
 
 
+### Owner-selected transport and shared community translations (planned)
+
+Target owners may explicitly choose classic FTP or non-sensitive HTTP as well as preferred SFTP/FTPS/HTTPS, with transparent security warnings and strong **isolation of the hosted service and all other tenants**. Id's central authentication credentials and redirect flows never inherit a tenant's insecure transport choice.
+
+Afutrans must tell the user it can technically read connected dictionaries for translation. **Private is the default**; owners may voluntarily contribute selected eligible entries or an eligible dictionary into a shared Afrowave translation memory, which lets other authorized applications reuse compatible approved phrases rather than translating identical text repeatedly. Public service access, private content access and community dictionary publication are distinct decisions. See [Connector Trust and Community Dictionaries](Docs/Connector-Trust-and-Community-Dictionaries/en.md).
+
+
 ### Run scheduled background work
 
 The planned **Scheduler** is deliberately simple and separate from translation priorities or provider selection:

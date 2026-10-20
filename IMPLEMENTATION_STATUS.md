@@ -98,3 +98,10 @@ Documentation-only Afutrans change; the web application and all source code rema
 - Application-owned first-party cookie sessions plus an Id-only central authentication session replace any idea of routing/sharing one cookie across apps; no third-party identity provider sign-in/tracking cookies, and no hard dependency on Afutrans for Id bootstrap/login.
 - Added [Docs/Registered-Service-Integration/en.md](Docs/Registered-Service-Integration/en.md) and linked it from the root README. No runtime code, migration, connector, API or tests changed. **Do not present these capabilities as implemented.**
 
+## 2026-10-20 — connector freedom and community dictionary opt-in (design)
+
+- Clarified user product policy: application owners may intentionally use classic FTP or test HTTP, with visible risks, instead of a platform-wide prohibition. Host-side network/credential/parser/tenant isolation remains mandatory; Id's own sign-in and token transport cannot be degraded by that choice.
+- Afutrans must disclose that it technically reads authorized target dictionaries to process translations. Separate `Private` (default), selected-entry sharing and owner-approved eligible whole-dictionary publication with publication preview, provenance, downstream redistribution rights and withdrawal limitations.
+- Common shared translation memory should reuse compatible translations across contributing apps but protect owner overrides, source/target locale, context, placeholders and publication scope; private source, message contents and credentials never enter public shared indexes implicitly.
+- Added [Docs/Connector-Trust-and-Community-Dictionaries/en.md](Docs/Connector-Trust-and-Community-Dictionaries/en.md), aligned Registered Service Integration and README. **Documentation only: no connector, sharing engine, API, migrations or tests added.**
+
