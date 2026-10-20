@@ -147,3 +147,10 @@ Documentation-only Afutrans change; the web application and all source code rema
 - Contributors can explicitly **split a single contribution by purpose**, e.g. USD 10 -> USD 5 AI credits + USD 5 VPS operating reserve. Each split remains individually traceable to the payment, subject to an upfront-disclosed fee/FX treatment; never silently divert donor-restricted funds.
 - **Carry forward surplus:** excess pooled server contributions are held in their purpose-specific balance for future months, with paid bills, reserved future service periods, actual AI credits and unspent cash clearly distinguished and reconciled.
 - **No immediate finance implementation:** the donor page, ledger and financial watchdog are deliberately **deferred until functioning useful services exist and accepting voluntary contributions makes practical sense**. Updated [Docs/Community-First-No-Profit-and-Transparent-Funding/en.md](Docs/Community-First-No-Profit-and-Transparent-Funding/en.md). Documentation only, no collection/payment processing, code or tests.
+
+## 2026-10-20 — simplified donor-facing cost totals, detailed evidence held internally
+
+- User clarified public transparency should be **simple and exact**, not a Czech electricity-bill-style breakdown: gross contribution, real total transfer fee, net received/available, purpose split, actual whole purchase price (tax inclusive), remaining purpose balance and value delivered.
+- Do **not** split public VPS expenses into VAT/rates/accounting subcomponents; detailed invoices, tax and FX remain in internal/source evidence for accurate reconciliation and compliance. Show extra *real* transaction fees explicitly in one clear total rather than disguising them.
+- Updated [Community-First-No-Profit-and-Transparent-Funding](Docs/Community-First-No-Profit-and-Transparent-Funding/en.md) and README. **Design only; finance watchdog/payment code deferred until useful live services exist; no tests or application changes.**
+

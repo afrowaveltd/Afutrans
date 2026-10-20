@@ -219,3 +219,8 @@ Default public service direction: **no arbitrary total-translation credit wall**
 ### Purpose-specific donations and reserves (planned, not collecting funds)
 
 A future voluntary contribution may be **split by the donor into explicit purposes** (e.g. USD 5 for AI credits and USD 5 for servers from a USD 10 payment), with transparent payment fees, evidence of actual spending, and **unused server contributions carried into future months** instead of being spent unnecessarily. A funding watchdog and contribution page will be built **only when real useful services are operating and it is meaningful to accept money**. No donation or billing implementation exists now. See [Community-First No-Profit and Transparent Funding](Docs/Community-First-No-Profit-and-Transparent-Funding/en.md).
+
+### Readable public funding totals (future interface)
+
+The future transparency page should show simple true totals: contribution received, **single actual payment/transfer fee**, net available, donor-selected purposes, **real tax-inclusive full purchase cost** (e.g. one VPS invoice total), delivered value and unspent balance. Do **not** turn public reporting into a VAT/tax-code breakdown; keep detailed invoice/tax/FX data only in supporting accounting evidence where required. The public and private donor views reconcile to those same records. No donation portal or financial watchdog is being implemented before running useful services. See [Community-First Funding](Docs/Community-First-No-Profit-and-Transparent-Funding/en.md).
+

@@ -79,3 +79,22 @@ Fees must be explained **before contribution**: e.g. the disclosed fee may be bo
 A contributor-facing future page should show their original gross payment, each purpose and allocated amount, applicable fees/taxes, actual invoices/AI top-ups, subsequent monthly balance movements, and remaining value. Community reporting shows aggregated transparent balances and receipts while respecting payer privacy and consent; specific banknotes are fungible, so attribute pooled payments using stable accounting references, not invented physical money tracing.
 
 **Explicit phase gate from the owner:** Do **not** start coding a donation gateway, payment processor, public financial watchdog, invoices or funding dashboard now. Build it **only after Afrowave offers useful running services and there is an actual meaningful reason to request voluntary contributions**. For now record the intended behavior and return to translation/localization implementation. No service charges or donation collection are authorized by this architecture note.
+
+## Simple public accounting: actual totals, not a tax-code itemization (2026-10-20)
+
+**Author's settled UX decision (overrides earlier examples of showing multiple tax/FX/fee columns to everyone):** Public and donor-facing funding views must be **short, understandable and reconciled**, not a line-by-line accounting ledger. Transparency means showing the actual total paid and what remains—not confronting users with VAT breakdowns, tax rates, ledger codes and accounting components that do not change the actual purchase price.
+
+### Default public presentation
+
+Show the **actual gross contribution**, the **total payment/transfer cost** as one comprehensible charged amount (when any), the **net available amount**, the user-selected destination amounts (e.g. AI and servers), and later the **actual whole-price expense** (e.g. 'VPS operation: USD 6.00, all applicable purchase taxes included'), the useful service funded and the still-unused purpose-bound balance. Pooling several contributions into future-month VPS operation remains visible as reserved/unspent money, not invented current spending.
+
+**Example, hypothetical:** gross USD 10.00; transfer fee USD 0.40; net USD 9.60; after an explicitly disclosed proportional fee treatment, AI USD 4.80, servers USD 4.80. This is an *illustration*, not a proposed mandatory fee rate or the only allocation rule. If fees are covered elsewhere, donor-designated net USD 5 + USD 5 may instead remain whole. Always show the rule and effective net allocation **before** payment.
+
+Purchase display is **one actual charged amount**, not 'before VAT + VAT + handling + ...'. A VPS invoice with tax components is publicly summarized by its **real total paid**. If an additional independent transfer charge actually reduces funds, show that one real charge clearly, not an unexplained difference or multiple confusing tax subrows. Public expense category/service purpose may have a concise accessible description; do not falsely aggregate unrelated expenses into one item.
+
+### Detailed internal records still required
+
+Internally retain original payment receipts, invoices and legally necessary tax/FX details so amounts and bank/provider balances reconcile accurately to the smallest currency unit, and auditors can verify them. **Internal evidence detail and simple public reporting are distinct presentations of the same authoritative facts**, not different accounting realities. The public may open a privacy-safe supporting receipt if desired, rather than being forced through its subfields. No personally identifying donor data or payment secrets in public evidence.
+
+**Timing:** this is an interface/accountability requirement for later. Do not implement the payment portal, finance watchdog or a ledger until an actually useful Afrowave service exists and there is a concrete reason to accept voluntary support. No payment processing, accounting or UI implementation in this documentation change.
+
