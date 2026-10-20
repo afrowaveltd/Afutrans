@@ -199,3 +199,10 @@ These are upstream reference datasets, **not implemented translation dictionarie
 - [UnderstandMe implementation status](https://github.com/afrowaveltd/Toolbox/blob/master/UnderstandMe/IMPLEMENTATION_STATUS.md) — state of the reusable library.
 
 Afutrans and UnderstandMe are developed in the open as part of the Afrowave software ecosystem. The product description will evolve alongside implementation; **features described as planned are not promises of currently available functionality**.
+
+### Dedicated worker lanes and customer-owned providers (planned)
+
+**Current hosted direction:** keep Afrowave's internal realtime capacity and the CommunityFree deferred worker pool **separate** from customer-paid work. Instead of selling better placement in the same community queue, assign a dedicated tenant queue lane bound to a separately funded VPS/LibreTranslate worker, or accept a compatible **customer-owned** LibreTranslate endpoint, cloud translation account or AI backend such as Ollama without charging them to rent our servers. Only the corresponding owner can use that backend; source text, credentials and result access remain tenant-scoped. Public reporting should account transparently for contributed amounts and actual VPS/operations/provider costs; no artificial per-word usage cap for customer-owned hardware, but physical resources and abuse protection are finite.
+
+See [Dedicated Capacity, BYO Backends and Transparency](Docs/Dedicated-Capacity-BYO-Backends-and-Transparency/en.md). This supersedes the earlier proposed paid priority over shared CommunityFree work.
+

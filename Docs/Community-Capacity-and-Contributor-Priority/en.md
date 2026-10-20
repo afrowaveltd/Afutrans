@@ -2,6 +2,8 @@
 
 **Status: product design agreed in principle, 2026-10-20; not implemented.** This document describes a preferred *hosted Afutrans operator policy*, not a mandatory rule for all UnderstandMe, Afutrans or self-hosted deployments. Final limits, payment model, amounts, promises and availability objectives remain to be defined.
 
+> **Decision update (2026-10-20):** The earlier `ContributorPriority` proposal to give paid clients higher priority on **shared community workers** is superseded. The owner explicitly chose isolated **CommunityFree**, **AfrowaveInternal** and **per-tenant dedicated/BYO queue lanes and worker pools**, so paying does not cause queue-jumping or reduce the free community's reserved capacity. No fee is required to connect an already-owned compatible backend. Canonical updated design: [Dedicated Capacity, BYO Backends and Transparency](../Dedicated-Capacity-BYO-Backends-and-Transparency/en.md). The older profile/dispatcher examples below are historical exploration; where they conflict, the new lane-isolation design governs.
+
 ## Intent
 
 Afutrans can provide useful shared translations without charging for every phrase. Public infrastructure nevertheless costs money: VPS, network, storage, CPU/RAM, reliability, optional dedicated LibreTranslate instances and operating reserves. The author favors **free deferred community work** and a voluntary/customer **contribution-funded faster service**, with actual contributions used to sustainably add dedicated worker capacity rather than maximizing revenue.

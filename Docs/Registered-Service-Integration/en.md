@@ -124,3 +124,12 @@ The author favors free **deferred/asynchronous translations** for the community 
 Realtime requests remain genuine automatic-only P0; deferred free submissions are **distinct durable non-P0 jobs**, with clear receipts, backpressure and finite limits. Paying/contributing clients may get reserved slots, higher eligible processing ceilings or optional real-time capacity if explicitly available, but free admitted work must not starve indefinitely. Keep contributions, provider charges and infrastructure cost reports separate.
 
 Detailed proposal: [Community Capacity and Contributor Priority](../Community-Capacity-and-Contributor-Priority/en.md). **Design only; specific pricing/guarantees not decided.**
+
+## Dedicated QueueLane and BYO provider isolation (2026-10-20)
+
+**Owner correction to the hosted business model:** Afrowave's internal P0/realtime and work queues are reserved; the public community receives its own free **deferred** worker capacity; a commercial tenant does **not** purchase priority over free users in the same queue. Instead use a separate tenant-owned queue lane and explicitly funded worker pool (managed VPS/LibreTranslate), or connect that tenant's **own existing LibreTranslate, Google/Microsoft provider subscription, Ollama or other compatible AI backend**. Owning a backend should not mandate a subscription to our VPS.
+
+QueueMaster will require dynamically registered **isolated lane groups** with P0–P4 as distinct *within-lane* urgency levels, not one new `Paid` priority. Their worker/endpoint binding must prevent unapproved cross-lane fallback. Exact queue code and persistence remain future work.
+
+Host may publish transparent capacity-cost contributions, receipts and true VPS/network/provider expenses without collecting more private data than needed. Do not invent a price, promise infinite hardware throughput, or silently bill customer provider usage to Afrowave. See [Dedicated Capacity, BYO Backends and Transparency](../Dedicated-Capacity-BYO-Backends-and-Transparency/en.md). **Design only.**
+
