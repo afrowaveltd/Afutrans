@@ -119,3 +119,14 @@ Main public view remains deliberately simple: **money in · money out · current
 
 **Phase gate remains explicit:** this is an intended bank-account selection criterion and future design **only**. Do not choose a bank, request credentials, create the account, collect donations, build the finance watchdog, implement live mirroring, or claim current transactions now. Revisit only when functional Afrowave services create a genuine reason to accept contributions.
 
+## Two-account contribution intake and public supplier outflows (future principle, 2026-10-20)
+
+**Owner clarification; concise concept only, implementation explicitly postponed.** Use a **separate contribution-receiving/proxy account** for voluntary payments. The contributor receives a proper personalized receipt/document in the private payment/accounting system. Once funds are reconciled, an aggregated transfer goes to the **main publicly transparent Afrowave operations account**, publicly labelled e.g. `Paywall income` or another clear, nonmisleading aggregate-source description. The label does not create a mandatory paywall or commercial privilege; donations remain voluntary and the CommunityFree service remains free.
+
+**Source-of-truth accounting:** do not double-count the transfer between Afrowave-controlled accounts as a new external donation. Link each public aggregate transfer to private donor receipts and purpose-specific allocations, external fees, unspent reserves and any refund/chargeback. Preserve public proof of the aggregate and private auditability of contributor identities without disclosing donor names or their individual payments on the main public feed.
+
+**Outgoing payments are intended to be openly inspectable**: a business payment to InterServer (e.g. VPS hosting) can show actual payee, amount, date and the source bank's corresponding transaction or reference, including the business bank account number where permitted and useful. Do **not** reflexively hide ordinary supplier identity/payment evidence as secret. Protect only genuinely sensitive personal information, credentials or contractual/financial details that must not be published; the selected bank's privacy/public-data model still governs.
+
+Public user experience stays straightforward: aggregate income, itemized real outgoing operating purchases, current account balance and reconciliation with the purpose ledger. The public main bank balance does not necessarily include money not yet transferred from the intake account; disclose this boundary instead of presenting the main-account balance as all project assets.
+
+**Timing:** discuss no more detailed banking/finance architecture until useful community services actually run and accepting contributions makes sense. No bank account, payment functionality, financial watchdog or test has been created by this documentation note.
