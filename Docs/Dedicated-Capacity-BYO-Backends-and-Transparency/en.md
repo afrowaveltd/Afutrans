@@ -61,7 +61,7 @@ The user may configure an endpoint mapping without buying a hosted machine. If t
 - Provider costs/meters belong to **the account owner** (especially cloud per-character/token plans), with optional usage reports for the customer and per-account hard caps; do not bill someone else or silently fall back to Afrowave's own paid backend if their quota expires. Normal failure outcome is queue/wait/explicit unavailable, with **opt-in** cross-account fallback only.
 - For AI integrations use the same **registration/isolation/capacity plumbing** but distinct provider capabilities and policy/adapter. AI chat, localization suggestions, document translation, semantic review and privacy consent differ; not every AI model is interchangeable with a translator.
 
-## Paywall as a transparent capacity ledger, not a pressure tactic
+## Public operating-cost dashboard instead of a paywall (superseded term)
 
 Offer a **publicly understandable operating-cost dashboard** (the label `paywall` is a product presentation choice):
 
@@ -98,4 +98,12 @@ Offer a **publicly understandable operating-cost dashboard** (the label `paywall
 QueueMaster's isolated lanes **may borrow spare backend buffers** only by a separate owner-approved, revocable, non-guaranteed capacity policy. When Afrowave Internal has extra P0-capable worker slots, idle capacity may be **offered to community** without changing reserved internal realtime minima. Reclaim at the next safe slot boundary, not by falsely claiming an in-flight non-preemptible provider call can be instantly interrupted. Owner-supplied AI ↔ LibreTranslate sharing is **voluntary in each direction**, subject to both the donor's spend/privacy allowances and the content owner's processor consent. A client can route its own realtime to its own engine and approved other work to borrowed/community endpoints.
 
 Own server need not expose inbound ports when an approved **outbound connector agent** is available. The owner's rough estimate of **USD 6/month** for a basic VPS is illustrative only; machine suitability/pricing and actual cost transparency require measurements. Full proposal: [Cooperative Backend Sharing](../Cooperative-Backend-Sharing/en.md). **Design only.**
+
+## Confirmed community-first charter overrides commercial language (2026-10-20)
+
+**Author's authoritative clarification:** Afrowave is intended to provide the maximum feasible service for free **from the first day and as the permanent principle**, not to become a profit-seeking translator or create artificial usage scarcity. No personal enrichment and no selling priority in the free community pool. Users should **wait rather than run out of arbitrary word/request credits**. Genuine overload/storage/abuse protection is a narrowly necessary operational safety measure, not a default or desired monetization constraint.
+
+**Donations are optional.** One-off funds may pay for actually credited AI provider tokens; recurring support may fund real VPS/LibreTranslate operation. Every amount received, fee/tax/FX charge, purpose-bound allocation, actual paid expense, provisioned capacity and still-unspent balance must be **auditable and reconciled to the smallest currency unit**, privacy-respecting, with both community overview and contributor-specific receipt. No undisclosed markups, personal withdrawals or '100% to VPS' claims concealing unavoidable costs. A donor can earmark an eligible purpose; a still-unspent balance remains visible.
+
+Earlier phrases `paywall`, `ContributorPriority`, `PaidClient` and free per-month limits are historical/example terminology **superseded wherever they imply commercialization of CommunityFree**. A separate tenant may cover only its actual documented dedicated resource cost or bring their own backend without paying Afrowave. Full governing charter: [Community-First No-Profit and Transparent Funding](../Community-First-No-Profit-and-Transparent-Funding/en.md). **Design only.**
 

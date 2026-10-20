@@ -73,3 +73,9 @@ A contributor's benefit may be **higher throughput / more available workers / a 
 
 Optional best-effort idle-worker *donations* do not grant paid priority in the common pool. Separate protected lanes remain, and dedicated tenants may choose to lend authorized endpoint buffers temporarily or supply their own backend. See [Cooperative Backend Sharing](../Cooperative-Backend-Sharing/en.md). All older shared-queue paid-priority and arbitrary free per-period quota examples are nonbinding and superseded where conflicting.
 
+## Governing no-profit funding policy overrides paid-tier examples (2026-10-20)
+
+**Do not implement historic sample paid priority or arbitrary free daily/monthly credit limits as product defaults.** Owner explicitly rejects hard pay-to-continue mechanisms as both initial and final community model. Provide everything feasible free under equal community rules, defer and slow requests when limited, and allow *voluntary* donations solely for documented actual infrastructure, paid AI tokens and other necessary service costs, with complete public accounting to the last currency minor unit.
+
+Detailed one-time vs recurring contribution purposes, earmarking, allocation vs actual spending, fees/taxes, unspent balances and privacy: [Community-First No-Profit and Transparent Funding](../Community-First-No-Profit-and-Transparent-Funding/en.md). No personal profit, no surprise charges, and no advantage over CommunityFree workers for donors. Earlier plan examples remain history, not a contradictory implementation requirement.
+

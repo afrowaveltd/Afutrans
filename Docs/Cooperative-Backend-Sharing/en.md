@@ -52,3 +52,10 @@
 7. Community/tenant backends fail or loans expire while durable jobs queued/leased: jobs recover idempotently in originating lane, with accurate source/result access and provider charge bookkeeping.
 
 **No scheduler, buffer leasing, outbound agent, hosted pricing, or user interface has been implemented by this document.**
+
+## Contributions never buy free queue position or personal profit (2026-10-20)
+
+**Highest-priority hosted policy:** CommunityFirst, free when feasible and no hard total credits imposed as a product lever. A shortage causes honest slower completion/backpressure, not a forced paid upgrade. Idle worker donations are voluntary and privilege no person above a community peer. Financial donations are likewise voluntary and support documented Afrowave running costs such as adding VPS, prepaid AI tokens or securing shared infrastructure; no one personally profits from the pooled contributions.
+
+Actual gross receipts, purpose restrictions, payment/FX/tax fees, credited AI tokens, VPS invoice/active service and unspent earmarked balances must reconcile and be visible in a privacy-safe community overview and contributor receipt. See [Community-First No-Profit and Transparent Funding](../Community-First-No-Profit-and-Transparent-Funding/en.md). **Design only.**
+
