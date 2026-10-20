@@ -105,3 +105,9 @@ Documentation-only Afutrans change; the web application and all source code rema
 - Common shared translation memory should reuse compatible translations across contributing apps but protect owner overrides, source/target locale, context, placeholders and publication scope; private source, message contents and credentials never enter public shared indexes implicitly.
 - Added [Docs/Connector-Trust-and-Community-Dictionaries/en.md](Docs/Connector-Trust-and-Community-Dictionaries/en.md), aligned Registered Service Integration and README. **Documentation only: no connector, sharing engine, API, migrations or tests added.**
 
+## 2026-10-20 — planned service intermediary and open/authorized modes
+
+- Owner proposes a separate reusable intermediary/API gateway so hosted Afutrans may remain private, exposing only permitted operations through a public edge. The intermediary can validate Id-backed user/application grants, distinguish anonymous open request mode from authorized mode and route allowed requests.
+- Allow anonymous translation only when explicitly configured and quota/privacy/resource constrained. Creating/updating Translation Targets, SQL/FTP connectors, secrets or private dictionaries remains authorized even in an otherwise open translation deployment.
+- Retain mandatory target-level capability and caller-context verification at Afutrans's application-command boundary to prevent bypass; no trusted user-provided IDs or insecure forwarding headers. UnderstandMe remains independent, offline-capable, and does not require an Id SDK.
+- Recorded in [Docs/Registered-Service-Integration/en.md](Docs/Registered-Service-Integration/en.md). **Design only: user intentionally deferred detailed API/role/gateway implementation; no runtime changes or tests performed.**
