@@ -67,3 +67,15 @@ For each accounting period, publish an equation such as **Opening balance + gros
 ## Status and implementation boundary
 
 **Only design requirements and ethics/product policy are recorded here.** No live donation/payment integration, ledger, invoices, public dashboard, exact cost pricing, VPS purchase automation or financial audit has been implemented or verified. Public transparency claims must wait for actual reconciled evidence.
+
+## Contributor-defined split allocations and month-to-month carry-forward (2026-10-20)
+
+**Confirmed additional requirement:** contributors may split **one payment across multiple explicit purposes**, for example a contribution of USD 10 allocated as **USD 5 to paid AI provider capacity and USD 5 to community server operation**. Record one immutable payment/receipt reference and multiple separately attributed `ContributionAllocation` entries whose total plus any **pre-disclosed and clearly accounted payment-fee treatment** reconciles exactly with actual funds. A purpose-restricted line must never silently be transferred to another purpose or privately withdrawn.
+
+Fees must be explained **before contribution**: e.g. the disclosed fee may be borne by a separate general operations fund, added separately with consent, or distributed against the chosen gross allocations under a transparently approved rule. Do not promise a net USD 5 + USD 5 if actual received funds are lower and no other budget covers the difference. For multiple currencies, show received value, exchange evidence and exact minor-unit allocation/rounding.
+
+**Never force immediate spending.** Contributions to server operation can be accumulated as restricted reserves for **future monthly bills** rather than spent merely because funds arrived. If five people collectively fund more than the current month's servers need, keep the excess visibly committed to the following months; the total available balance, already paid service periods, future reserved periods and still-unassigned/unspent amount remain separately visible. Do not label a future month's reserve a current month's cash expense or claim that a planned VPS is already deployed.
+
+A contributor-facing future page should show their original gross payment, each purpose and allocated amount, applicable fees/taxes, actual invoices/AI top-ups, subsequent monthly balance movements, and remaining value. Community reporting shows aggregated transparent balances and receipts while respecting payer privacy and consent; specific banknotes are fungible, so attribute pooled payments using stable accounting references, not invented physical money tracing.
+
+**Explicit phase gate from the owner:** Do **not** start coding a donation gateway, payment processor, public financial watchdog, invoices or funding dashboard now. Build it **only after Afrowave offers useful running services and there is an actual meaningful reason to request voluntary contributions**. For now record the intended behavior and return to translation/localization implementation. No service charges or donation collection are authorized by this architecture note.
