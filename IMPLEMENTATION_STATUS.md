@@ -111,3 +111,11 @@ Documentation-only Afutrans change; the web application and all source code rema
 - Allow anonymous translation only when explicitly configured and quota/privacy/resource constrained. Creating/updating Translation Targets, SQL/FTP connectors, secrets or private dictionaries remains authorized even in an otherwise open translation deployment.
 - Retain mandatory target-level capability and caller-context verification at Afutrans's application-command boundary to prevent bypass; no trusted user-provided IDs or insecure forwarding headers. UnderstandMe remains independent, offline-capable, and does not require an Id SDK.
 - Recorded in [Docs/Registered-Service-Integration/en.md](Docs/Registered-Service-Integration/en.md). **Design only: user intentionally deferred detailed API/role/gateway implementation; no runtime changes or tests performed.**
+
+## 2026-10-20 — community-free deferred work and contributor-funded capacity (design)
+
+- Author proposes a sustainability model for **hosted Afutrans**: free accepted deferred translations (finite bounded queues/caps, eventual work under fair capacity allocation), optional contributor-funded priority and optionally dedicated LibreTranslate VPS/worker pool funded by subscription/contributions. Not a profit-first or mandatory paid product; operator may sponsor services.
+- Keep `P0 RealTime` genuinely volatile, instant-path, automatic-only. A free waitable request is a separate authorized durable **non-P0** job; plan entitlement constrains admission/worker allocation, rather than redefining QueueMaster P0–P4 or adding mandatory per-client physical queues.
+- Use existing `ClientContext`/`ClientPolicy`, Gateway/Id optional authorization, quota/account constraints, QueueMaster and provider-cost separation. Protect internal workloads and give free admitted jobs starvation bounds; distinguish donations/revenue, provider charges and VPS operating costs.
+- Added [Docs/Community-Capacity-and-Contributor-Priority/en.md](Docs/Community-Capacity-and-Contributor-Priority/en.md) and linked from product README and service integration. **No payment integration, new gateway, scheduler/workers, code changes or tests.** Exact economics/service guarantees intentionally open.
+

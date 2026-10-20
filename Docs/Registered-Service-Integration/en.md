@@ -116,3 +116,11 @@ The user-facing **open/anonymous mode** and **authorized mode** are deployment/o
 Potential generic contracts such as `IServiceAccessGateway`, `IClientContextResolver` or a signed internal authorization-context envelope are **only candidates**, not frozen APIs. Do not build the gateway now; confirm transport, revocation/stale Id behavior, rate-limit distribution, public abuse controls and route exposure in a later design phase.
 
 **Status:** documentation only; no gateway, Id adapter, REST/SignalR business routing or storage authorization implementation added.
+
+## Contributor-funded community capacity and priority (2026-10-20)
+
+The author favors free **deferred/asynchronous translations** for the community plus optional **contributor-funded faster or dedicated compute capacity**, allowing VPS and self-hosted LibreTranslate worker expansion without making ordinary knowledge access a profit-maximizing product. A priority entitlement is a separately verified and bounded client-service policy, not a reinterpretation of the five P0–P4 QueueMaster priorities or permission to exceed global provider-account budgets.
+
+Realtime requests remain genuine automatic-only P0; deferred free submissions are **distinct durable non-P0 jobs**, with clear receipts, backpressure and finite limits. Paying/contributing clients may get reserved slots, higher eligible processing ceilings or optional real-time capacity if explicitly available, but free admitted work must not starve indefinitely. Keep contributions, provider charges and infrastructure cost reports separate.
+
+Detailed proposal: [Community Capacity and Contributor Priority](../Community-Capacity-and-Contributor-Priority/en.md). **Design only; specific pricing/guarantees not decided.**

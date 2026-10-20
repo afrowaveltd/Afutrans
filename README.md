@@ -37,6 +37,11 @@ Target owners may explicitly choose classic FTP or non-sensitive HTTP as well as
 Afutrans must tell the user it can technically read connected dictionaries for translation. **Private is the default**; owners may voluntarily contribute selected eligible entries or an eligible dictionary into a shared Afrowave translation memory, which lets other authorized applications reuse compatible approved phrases rather than translating identical text repeatedly. Public service access, private content access and community dictionary publication are distinct decisions. See [Connector Trust and Community Dictionaries](Docs/Connector-Trust-and-Community-Dictionaries/en.md).
 
 
+### Community-funded translation capacity (planned)
+
+An optional hosted Afutrans deployment may offer **free, explicitly deferred translation jobs** while inviting voluntary contributions or verified subscription plans to fund faster capacity or dedicated LibreTranslate workers/VPS. Community access remains bounded by honest queue/rate limits and protected from starvation; contributor priority is not a license to bypass privacy, quotas or the actual P0 real-time semantics. Donations, customer entitlements, provider API expenses and infrastructure costs are accounted for separately. A local/offline/self-hosted UnderstandMe installation never requires billing or an Id account. See [Community Capacity and Contributor Priority](Docs/Community-Capacity-and-Contributor-Priority/en.md).
+
+
 ### Run scheduled background work
 
 The planned **Scheduler** is deliberately simple and separate from translation priorities or provider selection:
