@@ -98,3 +98,24 @@ Internally retain original payment receipts, invoices and legally necessary tax/
 
 **Timing:** this is an interface/accountability requirement for later. Do not implement the payment portal, finance watchdog or a ledger until an actually useful Afrowave service exists and there is a concrete reason to accept voluntary support. No payment processing, accounting or UI implementation in this documentation change.
 
+## Bank-backed public transaction mirroring (future option, 2026-10-20)
+
+**Owner's additional long-term preference:** if and when Afrowave begins accepting optional contributions, seek a dedicated bank account/provider offering an officially supported **public read-only API** or equivalent transparent-account feed. Publish an up-to-date independently bank-sourced view of incoming booked transactions, outgoing booked transactions and the bank-confirmed available/book balance, in addition to the previously agreed simple cost/purpose dashboard. The objective is verifiable community trust: anyone should be able to compare our public finance summaries with **actual source-bank postings** rather than relying only on an Afrowave-operated ledger.
+
+**Never promise instantaneous posting merely because an API exists.** Display a visible bank-data `asOf`/last-successfully-synchronized timestamp, feed freshness and distinction between pending, booked/settled and reconciled items according to actual bank capabilities. Update via authenticated signed webhook if officially offered, or read-only polling with appropriate rate/cache behavior. A finance watchdog can report broken synchronization or accounting differences later, but there is no such implementation now.
+
+**Bank mirror vs. purpose ledger:** the external bank feed certifies transfer amounts, references, directions and balance *to the extent the selected API exposes them*. It does **not** by itself prove that a particular donation is assigned USD 5 to AI and USD 5 to VPS, that AI tokens were credited, or that a VPS was actually deployed. Those facts remain in separately auditable, privacy-safe purpose-allocation, invoice and provisioned-service records. Reconcile the bank balance to our actual ledger balance and explicitly label restricted future-month reserves, prepaid provider credits, processing fees and unapplied receipts without inflating paid expenses.
+
+### Security and human privacy are not optional
+
+- Use a *dedicated* account for Afrowave community finances and choose a bank/product that **legitimately authorizes public disclosure** of the desired transfer data. A normal private-account PSD2/open-banking API is not automatically public and must not be treated as an unrestricted open statement.
+- The public client/browser must never receive bank credentials, banking API keys, refresh/access tokens, or payment-initiation privileges. An isolated backend mirror uses **read-only least-privilege access** to the official bank feed; do not expose transfer/write methods or allow a public endpoint to initiate payments.
+- The owner wants incoming/outgoing **amounts and balances publicly visible**. Check what a real public account legally and technically exposes about counterparties: names, account numbers, payment references and user-entered payment messages can contain private information. Prefer a bank transparency product with privacy-safe public fields, explicitly inform donors *before payment* what the bank itself will publish, and do not promise a local anonymizer can suppress information already published directly by the bank. Where compatible with the banking product, project a redacted public view while retaining a complete confidential audit record.
+- Provide stable bank transaction IDs/deduplication, deterministic handling of reversals/chargebacks/corrections, pagination and correct multicurrency display/FX; a temporary bank API failure must never produce fictional transactions or a falsely fresh balance. Never publicly display secrets or tenant/donor personal data solely to prove transparency.
+
+### Interface expectations
+
+Main public view remains deliberately simple: **money in · money out · current bank balance · last bank update**; optional click-through shows the bank-confirmed dated entry, purpose attribution, actual expenditure and still-unspent amount. Avoid VAT/accounting subline clutter. A publicly accessible view should not require user login to see aggregate financial flows. The selected bank feed's own public source/verification link should be shown whenever it exists.
+
+**Phase gate remains explicit:** this is an intended bank-account selection criterion and future design **only**. Do not choose a bank, request credentials, create the account, collect donations, build the finance watchdog, implement live mirroring, or claim current transactions now. Revisit only when functional Afrowave services create a genuine reason to accept contributions.
+

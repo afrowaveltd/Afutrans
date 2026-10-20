@@ -154,3 +154,9 @@ Documentation-only Afutrans change; the web application and all source code rema
 - Do **not** split public VPS expenses into VAT/rates/accounting subcomponents; detailed invoices, tax and FX remain in internal/source evidence for accurate reconciliation and compliance. Show extra *real* transaction fees explicitly in one clear total rather than disguising them.
 - Updated [Community-First-No-Profit-and-Transparent-Funding](Docs/Community-First-No-Profit-and-Transparent-Funding/en.md) and README. **Design only; finance watchdog/payment code deferred until useful live services exist; no tests or application changes.**
 
+## 2026-10-20 — future transparent bank API read-only mirroring
+
+- Owner prefers a dedicated Afrowave bank account which provides an **official public/read-only transaction API or transparent account feed** once useful services justify accepting support. Future public overview: real bank-source incoming/outgoing booked transfers, current bank balance and truthful `last updated` timestamp.
+- The bank feed and own purpose/expense ledger must be independently **reconciled**, including fee handling, earmarked USD 5 AI / USD 5 server contribution splits and unspent multi-month reserves; bank transactions do not themselves prove a VPS was deployed or AI credits applied.
+- Security/privacy: no public access to bank authorization or write API; choose a suitable bank public account/feed, verify counterparties and reference privacy, notify donors up front about data published by the bank itself, redact locally when possible without misrepresenting raw bank-public visibility. API outages must not pretend live data is current.
+- Updated [Docs/Community-First-No-Profit-and-Transparent-Funding/en.md](Docs/Community-First-No-Profit-and-Transparent-Funding/en.md), README and status. **Design only; no bank selection, donation collection, API integration, dashboard, code or tests.**
