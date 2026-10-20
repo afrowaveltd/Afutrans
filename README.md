@@ -23,6 +23,13 @@ A **Translation Target** describes what Afutrans should maintain: the source loc
 
 Afutrans will support both applications that actively request translations and **passive targets** that cannot request work themselves. A scanner can compare their current state with previously confirmed state, discover added/changed/missing entries, and submit the necessary work. Read-only sources must remain valid targets; writing back is permitted only when the connector and policy explicitly support it.
 
+### Registered Afrowave service application (planned)
+
+Afutrans can be registered in Afrowave **Id** as a service application, run translations for Id itself, and optionally offer REST/business SignalR translation services to other registered community applications. A public *listing* or service capability does not automatically grant usage, unlimited capacity or access to another application's dictionaries. Each owning app configures an authorized Translation Target (such as a local folder, SFTP source, SQL/data-access connection or its API), default/target languages, source policy and separate client quota.
+
+Id owns first-party identity, application/service discovery and scoped access grants; Afutrans owns translation targets, provider orchestration and dictionary handling; UnderstandMe remains a reusable offline-capable engine. Login sessions/cookies belong to each application (Id has its own limited login cookie), not a shared tracking router. **No Id connection, network listener, provider or user-tracking integration becomes mandatory.** See [Registered Service Integration](Docs/Registered-Service-Integration/en.md) for boundaries and future workflows.
+
+
 ### Run scheduled background work
 
 The planned **Scheduler** is deliberately simple and separate from translation priorities or provider selection:

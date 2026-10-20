@@ -91,3 +91,10 @@ Documentation-only Afutrans change; the web application and all source code rema
 - Added `manifest-additional.json` with source path, pinned release/commit, Git blob SHA, and Unicode-3.0 license reference; updated CLDR README and `Docs/CLDR-Reference-Data/en.md`.
 - No existing `languages.json`, original CLDR assets or application source was changed. **No new runtime, import or language-rule implementation is implied; these are stored reusable datasets only.** Future shared UnderstandMe module/provider still pending.
 
+## 2026-10-20 — Afutrans as optional registered Afrowave service application (design)
+
+- Product direction: Afutrans is a registered **service application** in Id (one among many), used by Id itself and optionally exposed to other registered applications as a public/listed service according to configured service and client access policies. Directory visibility != authorization or entitlement.
+- Consumer application owners configure independent Translation Targets (local file roots, SFTP/FTPS, SQL/DataAccess or API/SignalR) with their own source/target languages, access rights, secrets references, quotas, sync settings and privacy boundaries. Id owns app registry/grants, **not** raw target DB connection strings or dictionary content.
+- Application-owned first-party cookie sessions plus an Id-only central authentication session replace any idea of routing/sharing one cookie across apps; no third-party identity provider sign-in/tracking cookies, and no hard dependency on Afutrans for Id bootstrap/login.
+- Added [Docs/Registered-Service-Integration/en.md](Docs/Registered-Service-Integration/en.md) and linked it from the root README. No runtime code, migration, connector, API or tests changed. **Do not present these capabilities as implemented.**
+
